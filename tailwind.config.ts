@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				heritage: {
+					gold: 'hsl(var(--heritage-gold))',
+					brown: 'hsl(var(--heritage-brown))',
+					beige: 'hsl(var(--heritage-beige))',
+					warm: 'hsl(var(--heritage-warm))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +68,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-heritage': 'var(--gradient-heritage)',
+				'gradient-warm': 'var(--gradient-warm)'
+			},
+			boxShadow: {
+				'heritage': 'var(--shadow-heritage)',
+				'warm': 'var(--shadow-warm)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
