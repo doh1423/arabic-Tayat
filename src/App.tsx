@@ -8,7 +8,8 @@ import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import Tours from "./pages/Tours";
 import Stories from "./pages/Stories";
-import Dawah from "./pages/Dawah";
+import Azkar from "./pages/Azkar";
+import Voices from "./pages/Voices";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
@@ -26,7 +27,8 @@ const App = () => (
             <Route path="explore" element={<Explore />} />
             <Route path="tours" element={<Tours />} />
             <Route path="stories" element={<Stories />} />
-            <Route path="dawah" element={<Dawah />} />
+            <Route path="azkar" element={<Azkar />} />
+            <Route path="voices" element={<Voices />} />
             <Route path="settings" element={<Settings />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

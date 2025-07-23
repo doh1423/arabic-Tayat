@@ -4,88 +4,103 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Book, Play, Globe, ChevronRight, Heart, Share, Volume2 } from "lucide-react";
 
-interface DawahContent {
+interface AzkarContent {
   id: string;
   title: string;
   content: string;
-  type: 'verse' | 'hadith' | 'article';
-  language: string;
+  type: 'morning' | 'evening' | 'sleep' | 'sunnah';
+  category: string;
   audioUrl?: string;
-  explanation?: string;
+  repetition?: number;
   source?: string;
+  benefit?: string;
 }
 
-const dawahContent: DawahContent[] = [
+const azkarContent: AzkarContent[] = [
   {
     id: "1",
-    title: "آية الكرسي",
-    content: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",
-    type: "verse",
-    language: "العربية",
-    source: "سورة البقرة - آية 255",
-    explanation: "آية الكرسي هي أعظم آية في القرآن الكريم، تتحدث عن عظمة الله وقدرته ووحدانيته",
-    audioUrl: "#"
+    title: "أذكار الصباح - الفاتحة",
+    content: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ * الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ * الرَّحْمَٰنِ الرَّحِيمِ * مَالِكِ يَوْمِ الدِّينِ * إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ * اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ * صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+    type: "morning",
+    category: "أذكار الصباح",
+    source: "سورة الفاتحة",
+    repetition: 1,
+    benefit: "أم الكتاب وفاتحة القرآن، تُقرأ في بداية كل صلاة"
   },
   {
     id: "2",
-    title: "Verse of the Throne",
-    content: "Allah - there is no deity except Him, the Ever-Living, the Self-Sustaining. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth.",
-    type: "verse",
-    language: "English",
-    source: "Quran 2:255",
-    explanation: "The Verse of the Throne is the greatest verse in the Quran, speaking about Allah's greatness, power, and oneness"
+    title: "سبحان الله وبحمده",
+    content: "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+    type: "morning",
+    category: "أذكار الصباح",
+    repetition: 100,
+    benefit: "من قالها حُطت خطاياه وإن كانت مثل زبد البحر"
   },
   {
     id: "3",
-    title: "حديث عن الرحمة",
-    content: "قال رسول الله صلى الله عليه وسلم: 'الراحمون يرحمهم الرحمن، ارحموا من في الأرض يرحمكم من في السماء'",
-    type: "hadith",
-    language: "العربية",
-    source: "رواه أبو داود والترمذي",
-    explanation: "هذا الحديث يؤكد على أهمية الرحمة في الإسلام وأن من يرحم الناس يرحمه الله"
+    title: "أذكار المساء - آية الكرسي",
+    content: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",
+    type: "evening",
+    category: "أذكار المساء",
+    source: "سورة البقرة - آية 255",
+    repetition: 1,
+    benefit: "من قرأها لم يقربه شيطان حتى يصبح"
   },
   {
     id: "4",
-    title: "What is Islam?",
-    content: "Islam is a complete way of life that guides humanity towards peace, justice, and spiritual fulfillment. It is based on the belief in one God (Allah) and the teachings of Prophet Muhammad (peace be upon him).",
-    type: "article",
-    language: "English",
-    explanation: "Islam means 'submission to Allah' and 'peace'. It provides guidance for all aspects of human life."
+    title: "دعاء النوم",
+    content: "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا",
+    type: "sleep",
+    category: "أذكار النوم",
+    repetition: 1,
+    benefit: "دعاء مستجاب عند النوم"
+  },
+  {
+    id: "5",
+    title: "سنة الوضوء",
+    content: "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+    type: "sunnah",
+    category: "سنن الوضوء",
+    repetition: 1,
+    benefit: "فُتحت له أبواب الجنة الثمانية يدخل من أيها شاء"
   }
 ];
 
-const languages = ["الكل", "العربية", "English"];
-const contentTypes = ["الكل", "آيات", "أحاديث", "مقالات"];
+const categories = ["الكل", "أذكار الصباح", "أذكار المساء", "أذكار النوم", "سنن الوضوء"];
+const contentTypes = ["الكل", "أذكار الصباح", "أذكار المساء", "أذكار النوم", "سنن"];
 
-const Dawah = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState("الكل");
+const Azkar = () => {
+  const [selectedCategory, setSelectedCategory] = useState("الكل");
   const [selectedType, setSelectedType] = useState("الكل");
   const [expandedContent, setExpandedContent] = useState<string | null>(null);
 
-  const filteredContent = dawahContent.filter(content => {
-    const languageMatch = selectedLanguage === "الكل" || content.language === selectedLanguage;
+  const filteredContent = azkarContent.filter(content => {
+    const categoryMatch = selectedCategory === "الكل" || content.category === selectedCategory;
     const typeMatch = selectedType === "الكل" || 
-      (selectedType === "آيات" && content.type === "verse") ||
-      (selectedType === "أحاديث" && content.type === "hadith") ||
-      (selectedType === "مقالات" && content.type === "article");
+      (selectedType === "أذكار الصباح" && content.type === "morning") ||
+      (selectedType === "أذكار المساء" && content.type === "evening") ||
+      (selectedType === "أذكار النوم" && content.type === "sleep") ||
+      (selectedType === "سنن" && content.type === "sunnah");
     
-    return languageMatch && typeMatch;
+    return categoryMatch && typeMatch;
   });
 
   const getTypeInArabic = (type: string) => {
     switch(type) {
-      case "verse": return "آية";
-      case "hadith": return "حديث";
-      case "article": return "مقال";
+      case "morning": return "أذكار الصباح";
+      case "evening": return "أذكار المساء";
+      case "sleep": return "أذكار النوم";
+      case "sunnah": return "سنة";
       default: return type;
     }
   };
 
   const getTypeColor = (type: string) => {
     switch(type) {
-      case "verse": return "bg-green-100 text-green-800";
-      case "hadith": return "bg-blue-100 text-blue-800";
-      case "article": return "bg-purple-100 text-purple-800";
+      case "morning": return "bg-yellow-100 text-yellow-800";
+      case "evening": return "bg-blue-100 text-blue-800";
+      case "sleep": return "bg-purple-100 text-purple-800";
+      case "sunnah": return "bg-green-100 text-green-800";
       default: return "bg-gray-100 text-gray-800";
     }
   };
@@ -95,29 +110,29 @@ const Dawah = () => {
       <div className="max-w-4xl mx-auto">
         <header className="mb-6">
           <h1 className="text-2xl font-bold text-heritage-brown mb-2">
-            الدعوة والتوجيه
+            أذكار وسنن
           </h1>
           <p className="text-muted-foreground">
-            تعرف على الإسلام من خلال الآيات والأحاديث والمقالات
+            أذكار الصباح والمساء والسنن النبوية الشريفة
           </p>
         </header>
 
         {/* فلاتر */}
         <div className="space-y-4 mb-6">
-          {/* فلتر اللغة */}
+          {/* فلتر الفئة */}
           <div>
-            <h3 className="text-sm font-medium text-heritage-brown mb-2">اللغة</h3>
+            <h3 className="text-sm font-medium text-heritage-brown mb-2">الفئة</h3>
             <div className="flex flex-wrap gap-2">
-              {languages.map((language) => (
+              {categories.map((category) => (
                 <Button
-                  key={language}
-                  variant={selectedLanguage === language ? "default" : "outline"}
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
                   size="sm"
-                  onClick={() => setSelectedLanguage(language)}
-                  className={selectedLanguage === language ? "bg-gradient-primary" : ""}
+                  onClick={() => setSelectedCategory(category)}
+                  className={selectedCategory === category ? "bg-gradient-primary" : ""}
                 >
-                  <Globe className="h-4 w-4 mr-1" />
-                  {language}
+                  <Book className="h-4 w-4 mr-1" />
+                  {category}
                 </Button>
               ))}
             </div>
@@ -160,9 +175,11 @@ const Dawah = () => {
                     <Badge variant="secondary" className={getTypeColor(content.type)}>
                       {getTypeInArabic(content.type)}
                     </Badge>
-                    <Badge variant="outline">
-                      {content.language}
-                    </Badge>
+                    {content.repetition && (
+                      <Badge variant="outline">
+                        {content.repetition}x
+                      </Badge>
+                    )}
                   </div>
                 </div>
               </CardHeader>
@@ -170,9 +187,9 @@ const Dawah = () => {
                 <div className="space-y-4">
                   {/* المحتوى الأساسي */}
                   <div className={`
-                    ${content.language === "العربية" ? "text-right" : "text-left"}
-                    ${content.type === "verse" ? "text-lg leading-relaxed" : ""}
-                    ${content.type === "hadith" ? "italic" : ""}
+                    text-right
+                    ${content.type === "morning" || content.type === "evening" ? "text-lg leading-relaxed" : ""}
+                    ${content.type === "sunnah" ? "italic" : ""}
                     text-foreground
                   `}>
                     {content.content}
@@ -185,15 +202,15 @@ const Dawah = () => {
                     </p>
                   )}
 
-                  {/* الشرح */}
-                  {content.explanation && (
+                  {/* الفائدة */}
+                  {content.benefit && (
                     <div className={`
                       ${expandedContent === content.id ? 'block' : 'hidden'}
                       bg-heritage-beige/30 p-4 rounded-lg border border-heritage-gold/20
                     `}>
-                      <h4 className="font-medium text-heritage-brown mb-2">الشرح:</h4>
+                      <h4 className="font-medium text-heritage-brown mb-2">الفائدة:</h4>
                       <p className="text-sm text-foreground leading-relaxed">
-                        {content.explanation}
+                        {content.benefit}
                       </p>
                     </div>
                   )}
@@ -207,7 +224,7 @@ const Dawah = () => {
                           استماع
                         </Button>
                       )}
-                      {content.explanation && (
+                      {content.benefit && (
                         <Button 
                           size="sm" 
                           variant="outline"
@@ -219,7 +236,7 @@ const Dawah = () => {
                             h-4 w-4 mr-1 transition-transform duration-200
                             ${expandedContent === content.id ? 'rotate-90' : ''}
                           `} />
-                          {expandedContent === content.id ? 'إخفاء الشرح' : 'قراءة المزيد'}
+                          {expandedContent === content.id ? 'إخفاء الفائدة' : 'قراءة المزيد'}
                         </Button>
                       )}
                     </div>
@@ -252,4 +269,4 @@ const Dawah = () => {
   );
 };
 
-export default Dawah;
+export default Azkar;
