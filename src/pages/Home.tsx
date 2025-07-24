@@ -35,18 +35,18 @@ const Home = () => {
         </Card>
 
         {/* Welcome Text */}
-        <div className="mb-12 max-w-md">
+        <div className="mb-12 max-w-lg">
           <h2 className="text-xl text-foreground mb-4 leading-relaxed">
-            مرحبًا بك في طيات المدينة
+            مرحبًا بك في طِيَات المدينة
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            حيث تُحاكي التاريخ والثقافة
+            حيث تتنفس الروح في المكان
           </p>
         </div>
 
         {/* Start Button */}
         <Button 
-          onClick={() => navigate('/explore')}
+          onClick={() => navigate('/journey')}
           size="lg"
           className="
             bg-gradient-primary hover:opacity-90 

@@ -2,12 +2,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Map, Users, Volume2, BookOpen, Settings, Mic } from "lucide-react";
 
 const navigationItems = [
-  { id: 'explore', icon: Map, label: 'استكشاف', path: '/explore' },
-  { id: 'tours', icon: Users, label: 'الجولات', path: '/tours' },
-  { id: 'stories', icon: Volume2, label: 'القصص', path: '/stories' },
-  { id: 'azkar', icon: BookOpen, label: 'أذكار وسنن', path: '/azkar' },
-  { id: 'voices', icon: Mic, label: 'المدينة بصوت أهلها', path: '/voices' },
-  { id: 'settings', icon: Settings, label: 'الإعدادات', path: '/settings' },
+  { id: 'journey', icon: Map, label: 'رحلة النور', path: '/journey' },
+  { id: 'memory', icon: Users, label: 'مرآة الذاكرة', path: '/memory' },
+  { id: 'keys', icon: BookOpen, label: 'مفاتيح المدينة', path: '/keys' },
+  { id: 'secrets', icon: Volume2, label: 'تجوال الأسرار', path: '/secrets' },
+  { id: 'voices', icon: Mic, label: 'صوت المدينة', path: '/voices' },
 ];
 
 export const Navigation = () => {

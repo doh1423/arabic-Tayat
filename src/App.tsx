@@ -5,12 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import Home from "./pages/Home";
-import Explore from "./pages/Explore";
-import Tours from "./pages/Tours";
-import Stories from "./pages/Stories";
-import Azkar from "./pages/Azkar";
+import Journey from "./pages/Journey";
+import Memory from "./pages/Memory";
+import Keys from "./pages/Keys";
+import Secrets from "./pages/Secrets";
 import Voices from "./pages/Voices";
-import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,12 +23,11 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="explore" element={<Explore />} />
-            <Route path="tours" element={<Tours />} />
-            <Route path="stories" element={<Stories />} />
-            <Route path="azkar" element={<Azkar />} />
+            <Route path="journey" element={<Journey />} />
+            <Route path="memory" element={<Memory />} />
+            <Route path="keys" element={<Keys />} />
+            <Route path="secrets" element={<Secrets />} />
             <Route path="voices" element={<Voices />} />
-            <Route path="settings" element={<Settings />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
