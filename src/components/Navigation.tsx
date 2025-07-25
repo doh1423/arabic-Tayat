@@ -27,12 +27,14 @@ export const Navigation = () => {
               key={item.id}
               onClick={() => navigate(item.path)}
               className={`
-                flex flex-col items-center p-2 rounded-lg transition-all duration-200
+                flex flex-col items-center p-2 rounded-lg transition-all duration-200 navigation-item
+                prototype-annotation
                 ${active 
                   ? 'text-primary bg-heritage-gold/10 shadow-heritage' 
                   : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 }
               `}
+              data-annotation={`انتقال إلى: ${item.label}`}
             >
               <Icon className={`h-5 w-5 mb-1 ${active ? 'text-heritage-gold' : ''}`} />
               <span className="text-xs font-medium">{item.label}</span>

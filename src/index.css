@@ -119,3 +119,39 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Prototype Mode Animations */
+@layer utilities {
+  .prototype-highlight {
+    @apply relative;
+  }
+  
+  .prototype-highlight::after {
+    content: '';
+    @apply absolute inset-0 border-2 border-primary/40 rounded animate-pulse pointer-events-none;
+  }
+  
+  .wireframe-element {
+    @apply border-2 border-dashed border-muted-foreground/30 bg-muted/10;
+  }
+  
+  .prototype-annotation {
+    @apply relative;
+  }
+  
+  .device-frame {
+    @apply shadow-2xl border border-border bg-card;
+  }
+  
+  .mobile-frame {
+    @apply w-[375px] h-[667px] rounded-[2rem] relative;
+  }
+  
+  .tablet-frame {
+    @apply w-[768px] h-[1024px] rounded-xl relative;
+  }
+  
+  .desktop-frame {
+    @apply w-[1200px] h-[800px] rounded-lg relative;
+  }
+}
