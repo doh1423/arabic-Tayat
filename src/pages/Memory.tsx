@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Camera, Heart, MessageCircle, Share, Eye, Upload, Filter } from "lucide-react";
+import { MapPin, Camera, Heart, MessageCircle, Share, Eye, Upload, Filter, Sparkles } from "lucide-react";
+
+// Import images
+import prophetMosqueImg from "@/assets/prophet-mosque.jpg";
+import mountUhudImg from "@/assets/mount-uhud.jpg";
+import islamicPatternImg from "@/assets/islamic-pattern.jpg";
+import memoryConceptImg from "@/assets/memory-concept.jpg";
 
 interface Landmark {
   id: string;
@@ -212,15 +218,34 @@ const Memory = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background p-6">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-heritage-brown mb-4">
-          مرآة الذاكرة
-        </h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          شارك لحظاتك المقدسة واستكشف ذكريات الزوار الآخرين
-        </p>
+    <div className="min-h-screen bg-gradient-memory-bg">
+      {/* Hero Header with Background */}
+      <div className="relative overflow-hidden mb-8">
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url(${memoryConceptImg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="relative bg-gradient-memory-golden/90 backdrop-blur-sm">
+          <div className="text-center py-16 px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <Sparkles className="h-10 w-10 text-white" />
+                </div>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+                مرآة الذاكرة
+              </h1>
+              <p className="text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">
+                شارك لحظاتك المقدسة واستكشف ذكريات الزوار الآخرين في رحلة روحانية عبر تاريخ المدينة المنورة
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {selectedLandmark ? (
@@ -283,48 +308,73 @@ const Memory = () => {
           </div>
 
           {/* Memories Grid */}
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredMemories.map((memory) => (
-              <Card key={memory.id} className="border-heritage-gold/20 hover:shadow-heritage transition-shadow">
-                <CardContent className="p-0">
-                  <div className="aspect-square bg-muted rounded-t-lg mb-4"></div>
-                  <div className="p-4">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="font-medium text-heritage-brown">{memory.userNickname}</span>
-                      <Badge variant="outline" className="border-heritage-gold/30">
+              <Card 
+                key={memory.id} 
+                className="group overflow-hidden border-0 bg-gradient-memory-card transition-all duration-500 hover:scale-[1.02]"
+                style={{ 
+                  boxShadow: 'var(--shadow-memory-soft)',
+                  borderRadius: '1.5rem'
+                }}
+              >
+                <div className="relative">
+                  <div className="aspect-square bg-gradient-to-br from-hsl(var(--memory-light)) to-hsl(var(--memory-secondary)) rounded-t-3xl relative overflow-hidden">
+                    <div 
+                      className="absolute inset-0 opacity-40"
+                      style={{
+                        backgroundImage: `url(${islamicPatternImg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-memory/20" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <Camera className="h-8 w-8 text-hsl(var(--memory-primary))" />
+                      </div>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-hsl(var(--memory-accent))/90 text-white border-0 backdrop-blur-sm">
                         {memory.category}
                       </Badge>
                     </div>
-                    
-                    <p className="text-sm mb-3">{memory.caption}</p>
-                    
-                    {memory.prayer && (
-                      <div className="bg-heritage-gold/10 p-3 rounded-lg mb-3">
-                        <p className="text-sm italic text-heritage-brown">"{memory.prayer}"</p>
-                      </div>
-                    )}
-                    
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <span>{memory.timestamp}</span>
-                      <div className="flex gap-4">
-                        <button 
-                          onClick={() => handleLike(memory.id)}
-                          className="flex items-center gap-1 hover:text-red-500"
-                        >
-                          <Heart className="h-4 w-4" />
-                          <span>{memory.likes}</span>
-                        </button>
-                        <button className="flex items-center gap-1 hover:text-blue-500">
-                          <MessageCircle className="h-4 w-4" />
-                          <span>{memory.comments.length}</span>
-                        </button>
-                        <button 
-                          onClick={() => handleShare(memory.id)}
-                          className="flex items-center gap-1 hover:text-green-500"
-                        >
-                          <Share className="h-4 w-4" />
-                        </button>
-                      </div>
+                  </div>
+                </div>
+                
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-semibold text-hsl(var(--memory-deep))">{memory.userNickname}</span>
+                    <span className="text-xs text-hsl(var(--memory-primary))/60">{memory.timestamp}</span>
+                  </div>
+                  
+                  <p className="text-sm text-hsl(var(--memory-deep))/80 leading-relaxed mb-4">{memory.caption}</p>
+                  
+                  {memory.prayer && (
+                    <div className="bg-gradient-to-r from-hsl(var(--memory-light)) to-hsl(var(--memory-secondary))/50 p-4 rounded-xl mb-4 border-r-4 border-hsl(var(--memory-accent))">
+                      <p className="text-sm italic text-hsl(var(--memory-deep)) leading-relaxed">"{memory.prayer}"</p>
+                    </div>
+                  )}
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-hsl(var(--memory-secondary))/50">
+                    <div className="flex gap-6">
+                      <button 
+                        onClick={() => handleLike(memory.id)}
+                        className="flex items-center gap-1.5 text-hsl(var(--memory-primary)) hover:text-red-500 transition-colors"
+                      >
+                        <Heart className="h-4 w-4" />
+                        <span className="text-sm font-medium">{memory.likes}</span>
+                      </button>
+                      <button className="flex items-center gap-1.5 text-hsl(var(--memory-primary)) hover:text-blue-500 transition-colors">
+                        <MessageCircle className="h-4 w-4" />
+                        <span className="text-sm font-medium">{memory.comments.length}</span>
+                      </button>
+                      <button 
+                        onClick={() => handleShare(memory.id)}
+                        className="flex items-center gap-1.5 text-hsl(var(--memory-primary)) hover:text-green-500 transition-colors"
+                      >
+                        <Share className="h-4 w-4" />
+                      </button>
                     </div>
                   </div>
                 </CardContent>
@@ -333,47 +383,90 @@ const Memory = () => {
           </div>
         </div>
       ) : (
-        <div className="max-w-4xl mx-auto">
-          {/* Interactive Map Placeholder */}
-          <Card className="mb-6 border-heritage-gold/20">
-            <CardContent className="p-8">
-              <div className="bg-gradient-to-b from-heritage-gold/20 to-heritage-gold/5 rounded-lg h-64 flex items-center justify-center mb-4">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-heritage-gold mx-auto mb-2" />
-                  <p className="text-heritage-brown font-medium">خريطة المدينة التفاعلية</p>
-                  <p className="text-sm text-muted-foreground">انقر على المعالم لاستكشاف الذكريات</p>
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Interactive Map with Islamic Pattern */}
+          <Card className="mb-8 overflow-hidden" style={{ boxShadow: 'var(--shadow-memory)' }}>
+            <CardContent className="p-0">
+              <div className="relative h-80">
+                <div 
+                  className="absolute inset-0 opacity-30"
+                  style={{
+                    backgroundImage: `url(${islamicPatternImg})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-memory/60 backdrop-blur-[1px]" />
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                      <MapPin className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">خريطة المدينة التفاعلية</h3>
+                    <p className="text-white/80 text-sm">انقر على المعالم لاستكشاف الذكريات المقدسة</p>
+                  </div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Landmarks Grid */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {landmarks.map((landmark) => (
-              <Card 
-                key={landmark.id} 
-                className="border-heritage-gold/20 hover:shadow-heritage transition-all duration-300 cursor-pointer"
-                onClick={() => setSelectedLandmark(landmark)}
-              >
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-heritage-brown">{landmark.name}</CardTitle>
-                    <Badge variant="secondary">{landmark.category}</Badge>
+          <div className="grid gap-8 md:grid-cols-2">
+            {landmarks.map((landmark, index) => {
+              const landmarkImage = landmark.id === "prophet-mosque" ? prophetMosqueImg : mountUhudImg;
+              return (
+                <Card 
+                  key={landmark.id} 
+                  className="group overflow-hidden cursor-pointer border-0 bg-gradient-memory-card transition-all duration-500 hover:scale-[1.02]"
+                  style={{ 
+                    boxShadow: 'var(--shadow-memory-soft)',
+                    borderRadius: '1.5rem'
+                  }}
+                  onClick={() => setSelectedLandmark(landmark)}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={landmarkImage}
+                      alt={landmark.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute top-4 right-4">
+                      <Badge 
+                        className="bg-white/90 text-hsl(var(--memory-deep)) border-0 backdrop-blur-sm"
+                      >
+                        {landmark.category}
+                      </Badge>
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-white text-xl font-bold mb-1 drop-shadow-lg">
+                        {landmark.name}
+                      </h3>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground text-sm">{landmark.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">
-                      {landmark.memories.length} ذكرية
-                    </span>
-                    <Button size="sm" className="bg-gradient-primary hover:opacity-90 text-heritage-brown">
-                      استكشف
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  
+                  <CardContent className="p-6">
+                    <p className="text-hsl(var(--memory-deep))/80 text-sm leading-relaxed mb-4">
+                      {landmark.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-sm text-hsl(var(--memory-primary))">
+                        <Heart className="h-4 w-4" />
+                        <span className="font-medium">{landmark.memories.length} ذكرية مقدسة</span>
+                      </div>
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-memory text-white border-0 hover:opacity-90 transition-all duration-300 hover:scale-105"
+                      >
+                        <Sparkles className="ml-2 h-4 w-4" />
+                        استكشف
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       )}

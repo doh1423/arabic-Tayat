@@ -58,6 +58,14 @@ export default {
 					beige: 'hsl(var(--heritage-beige))',
 					warm: 'hsl(var(--heritage-warm))'
 				},
+				memory: {
+					primary: 'hsl(var(--memory-primary))',
+					secondary: 'hsl(var(--memory-secondary))',
+					accent: 'hsl(var(--memory-accent))',
+					deep: 'hsl(var(--memory-deep))',
+					light: 'hsl(var(--memory-light))',
+					emerald: 'hsl(var(--memory-emerald))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -72,11 +80,18 @@ export default {
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-heritage': 'var(--gradient-heritage)',
-				'gradient-warm': 'var(--gradient-warm)'
+				'gradient-warm': 'var(--gradient-warm)',
+				'gradient-memory': 'var(--gradient-memory)',
+				'gradient-memory-bg': 'var(--gradient-memory-bg)',
+				'gradient-memory-card': 'var(--gradient-memory-card)',
+				'gradient-memory-golden': 'var(--gradient-memory-golden)'
 			},
 			boxShadow: {
 				'heritage': 'var(--shadow-heritage)',
-				'warm': 'var(--shadow-warm)'
+				'warm': 'var(--shadow-warm)',
+				'memory': 'var(--shadow-memory)',
+				'memory-soft': 'var(--shadow-memory-soft)',
+				'glow': 'var(--shadow-glow)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

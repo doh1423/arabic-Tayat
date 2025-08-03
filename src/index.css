@@ -43,14 +43,29 @@ All colors MUST be HSL.
     --heritage-beige: 35 25% 85%;
     --heritage-warm: 28 45% 78%;
     
+    /* Memory-specific colors */
+    --memory-primary: 174 60% 40%;
+    --memory-secondary: 174 25% 85%;
+    --memory-accent: 41 85% 60%;
+    --memory-deep: 174 45% 25%;
+    --memory-light: 174 30% 95%;
+    --memory-emerald: 160 70% 45%;
+    
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(42 88% 58%), hsl(38 75% 65%));
     --gradient-heritage: linear-gradient(180deg, hsl(40 30% 97%), hsl(35 25% 90%));
     --gradient-warm: linear-gradient(135deg, hsl(28 45% 78%), hsl(35 65% 70%));
+    --gradient-memory: linear-gradient(135deg, hsl(174 60% 40%), hsl(174 70% 50%));
+    --gradient-memory-bg: linear-gradient(180deg, hsl(174 30% 95%), hsl(40 30% 97%));
+    --gradient-memory-card: linear-gradient(145deg, hsl(174 25% 85%), hsl(40 20% 95%));
+    --gradient-memory-golden: linear-gradient(135deg, hsl(41 85% 60%), hsl(174 60% 40%));
     
     /* Shadows */
     --shadow-heritage: 0 4px 20px hsl(42 88% 58% / 0.15);
     --shadow-warm: 0 2px 10px hsl(25 45% 35% / 0.1);
+    --shadow-memory: 0 15px 40px -15px hsl(174 45% 25% / 0.4);
+    --shadow-memory-soft: 0 8px 25px -8px hsl(174 60% 40% / 0.25);
+    --shadow-glow: 0 0 40px hsl(41 85% 60% / 0.2);
 
     --radius: 0.5rem;
 
