@@ -84,14 +84,17 @@ export default {
 				'gradient-memory': 'var(--gradient-memory)',
 				'gradient-memory-bg': 'var(--gradient-memory-bg)',
 				'gradient-memory-card': 'var(--gradient-memory-card)',
-				'gradient-memory-golden': 'var(--gradient-memory-golden)'
+				'gradient-memory-golden': 'var(--gradient-memory-golden)',
+				'gradient-modern': 'var(--gradient-modern)',
+				'gradient-hero': 'var(--gradient-hero)'
 			},
 			boxShadow: {
 				'heritage': 'var(--shadow-heritage)',
 				'warm': 'var(--shadow-warm)',
 				'memory': 'var(--shadow-memory)',
 				'memory-soft': 'var(--shadow-memory-soft)',
-				'glow': 'var(--shadow-glow)'
+				'glow': 'var(--shadow-glow)',
+				'modern': 'var(--shadow-modern)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
