@@ -8,67 +8,67 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Modern Islamic Color Palette */
-    --background: 225 15% 97%;
-    --foreground: 220 25% 15%;
+    /* Professional Color Palette */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 12%;
 
-    --card: 225 10% 95%;
-    --card-foreground: 220 25% 15%;
+    --card: 210 15% 96%;
+    --card-foreground: 215 25% 12%;
 
-    --popover: 225 10% 95%;
-    --popover-foreground: 220 25% 15%;
+    --popover: 210 15% 96%;
+    --popover-foreground: 215 25% 12%;
 
-    --primary: 200 85% 45%; /* Deep Teal */
+    --primary: 214 84% 56%; /* Professional Blue */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 280 35% 65%; /* Soft Purple */
-    --secondary-foreground: 220 25% 15%;
+    --secondary: 43 74% 66%; /* Warm Amber */
+    --secondary-foreground: 215 25% 12%;
 
-    --muted: 225 15% 88%;
-    --muted-foreground: 220 20% 50%;
+    --muted: 210 40% 90%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 340 75% 55%; /* Rose Pink */
-    --accent-foreground: 220 25% 15%;
+    --accent: 158 64% 52%; /* Professional Green */
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 225 20% 85%;
-    --input: 225 20% 85%;
-    --ring: 200 85% 45%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 84% 56%;
 
-    /* Custom Modern Colors */
-    --heritage-gold: 45 90% 55%;
-    --heritage-brown: 220 25% 20%;
-    --heritage-beige: 225 15% 88%;
-    --heritage-warm: 280 35% 65%;
+    /* Custom Professional Colors */
+    --heritage-gold: 43 74% 66%;
+    --heritage-brown: 215 25% 20%;
+    --heritage-beige: 210 40% 90%;
+    --heritage-warm: 43 74% 66%;
     
     /* Memory-specific colors */
-    --memory-primary: 200 85% 45%;
-    --memory-secondary: 200 30% 85%;
-    --memory-accent: 340 75% 55%;
-    --memory-deep: 200 70% 25%;
-    --memory-light: 200 25% 95%;
-    --memory-emerald: 160 70% 45%;
+    --memory-primary: 214 84% 56%;
+    --memory-secondary: 214 30% 85%;
+    --memory-accent: 158 64% 52%;
+    --memory-deep: 214 70% 30%;
+    --memory-light: 214 25% 95%;
+    --memory-emerald: 158 64% 52%;
     
-    /* Modern Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(200 85% 45%), hsl(200 70% 55%));
-    --gradient-heritage: linear-gradient(180deg, hsl(225 15% 97%), hsl(225 10% 92%));
-    --gradient-warm: linear-gradient(135deg, hsl(280 35% 65%), hsl(340 75% 55%));
-    --gradient-memory: linear-gradient(135deg, hsl(200 85% 45%), hsl(160 70% 45%));
-    --gradient-memory-bg: linear-gradient(180deg, hsl(200 25% 95%), hsl(225 15% 97%));
-    --gradient-memory-card: linear-gradient(145deg, hsl(200 30% 85%), hsl(225 10% 95%));
-    --gradient-memory-golden: linear-gradient(135deg, hsl(340 75% 55%), hsl(200 85% 45%));
-    --gradient-modern: linear-gradient(135deg, hsl(200 85% 45%), hsl(280 35% 65%), hsl(340 75% 55%));
-    --gradient-hero: linear-gradient(135deg, hsl(200 85% 45%), hsl(200 70% 55%), hsl(280 35% 65%));
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 70% 66%));
+    --gradient-heritage: linear-gradient(180deg, hsl(210 20% 98%), hsl(210 15% 93%));
+    --gradient-warm: linear-gradient(135deg, hsl(43 74% 66%), hsl(158 64% 52%));
+    --gradient-memory: linear-gradient(135deg, hsl(214 84% 56%), hsl(158 64% 52%));
+    --gradient-memory-bg: linear-gradient(180deg, hsl(214 25% 95%), hsl(210 20% 98%));
+    --gradient-memory-card: linear-gradient(145deg, hsl(214 30% 85%), hsl(210 15% 96%));
+    --gradient-memory-golden: linear-gradient(135deg, hsl(43 74% 66%), hsl(214 84% 56%));
+    --gradient-modern: linear-gradient(135deg, hsl(214 84% 56%), hsl(43 74% 66%), hsl(158 64% 52%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 70% 66%), hsl(43 74% 66%));
     
-    /* Modern Shadows */
-    --shadow-heritage: 0 8px 32px hsl(200 85% 45% / 0.2);
-    --shadow-warm: 0 4px 16px hsl(280 35% 65% / 0.15);
-    --shadow-memory: 0 20px 50px -20px hsl(200 70% 25% / 0.4);
-    --shadow-memory-soft: 0 10px 30px -10px hsl(200 85% 45% / 0.25);
-    --shadow-glow: 0 0 50px hsl(340 75% 55% / 0.3);
-    --shadow-modern: 0 25px 60px -25px hsl(200 85% 45% / 0.3);
+    /* Professional Shadows */
+    --shadow-heritage: 0 8px 32px hsl(214 84% 56% / 0.15);
+    --shadow-warm: 0 4px 16px hsl(43 74% 66% / 0.12);
+    --shadow-memory: 0 20px 50px -20px hsl(214 70% 30% / 0.25);
+    --shadow-memory-soft: 0 10px 30px -10px hsl(214 84% 56% / 0.15);
+    --shadow-glow: 0 0 50px hsl(158 64% 52% / 0.2);
+    --shadow-modern: 0 25px 60px -25px hsl(214 84% 56% / 0.2);
 
     --radius: 0.75rem;
 
@@ -90,51 +90,51 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 8%;
-    --foreground: 225 15% 92%;
+    --background: 215 25% 9%;
+    --foreground: 210 15% 92%;
 
-    --card: 220 25% 10%;
-    --card-foreground: 225 15% 92%;
+    --card: 215 25% 11%;
+    --card-foreground: 210 15% 92%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 225 15% 92%;
+    --popover: 215 25% 11%;
+    --popover-foreground: 210 15% 92%;
 
-    --primary: 200 85% 55%;
-    --primary-foreground: 220 25% 8%;
+    --primary: 214 84% 66%;
+    --primary-foreground: 215 25% 9%;
 
-    --secondary: 280 35% 25%;
-    --secondary-foreground: 225 15% 92%;
+    --secondary: 43 74% 76%;
+    --secondary-foreground: 215 25% 9%;
 
-    --muted: 220 25% 15%;
-    --muted-foreground: 225 15% 65%;
+    --muted: 215 25% 16%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 340 75% 45%;
-    --accent-foreground: 225 15% 92%;
+    --accent: 158 64% 62%;
+    --accent-foreground: 215 25% 9%;
 
     --destructive: 0 84% 50%;
-    --destructive-foreground: 225 15% 92%;
+    --destructive-foreground: 210 15% 92%;
 
-    --border: 220 25% 15%;
-    --input: 220 25% 15%;
-    --ring: 200 85% 55%;
+    --border: 215 25% 16%;
+    --input: 215 25% 16%;
+    --ring: 214 84% 66%;
     
     /* Dark theme adjustments */
-    --heritage-gold: 45 90% 65%;
-    --heritage-brown: 225 15% 80%;
-    --heritage-beige: 220 25% 15%;
-    --heritage-warm: 280 35% 75%;
+    --heritage-gold: 43 74% 76%;
+    --heritage-brown: 210 15% 80%;
+    --heritage-beige: 215 25% 16%;
+    --heritage-warm: 43 74% 76%;
     
-    --memory-primary: 200 85% 55%;
-    --memory-secondary: 200 30% 20%;
-    --memory-accent: 340 75% 65%;
-    --memory-deep: 200 70% 80%;
-    --memory-light: 200 25% 12%;
+    --memory-primary: 214 84% 66%;
+    --memory-secondary: 214 30% 20%;
+    --memory-accent: 158 64% 62%;
+    --memory-deep: 214 70% 80%;
+    --memory-light: 214 25% 13%;
     
     /* Dark gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(200 85% 55%), hsl(200 70% 65%));
-    --gradient-heritage: linear-gradient(180deg, hsl(220 25% 8%), hsl(220 25% 12%));
-    --gradient-memory: linear-gradient(135deg, hsl(200 85% 55%), hsl(160 70% 55%));
-    --gradient-modern: linear-gradient(135deg, hsl(200 85% 55%), hsl(280 35% 75%), hsl(340 75% 65%));
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 66%), hsl(214 70% 76%));
+    --gradient-heritage: linear-gradient(180deg, hsl(215 25% 9%), hsl(215 25% 13%));
+    --gradient-memory: linear-gradient(135deg, hsl(214 84% 66%), hsl(158 64% 62%));
+    --gradient-modern: linear-gradient(135deg, hsl(214 84% 66%), hsl(43 74% 76%), hsl(158 64% 62%));
     
     --sidebar-background: 220 25% 10%;
     --sidebar-foreground: 225 15% 92%;
