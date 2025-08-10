@@ -5,12 +5,17 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Camera, Heart, MessageCircle, Share, Eye, Upload, Filter, Sparkles } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { toast } from "sonner";
 
 // Import images
 import prophetMosqueImg from "@/assets/prophet-mosque.jpg";
 import mountUhudImg from "@/assets/mount-uhud.jpg";
 import islamicPatternImg from "@/assets/islamic-pattern.jpg";
 import memoryConceptImg from "@/assets/memory-concept.jpg";
+import future2050Img1 from "@/assets/future-2050-1.jpg";
+import future2050Img2 from "@/assets/future-2050-2.jpg";
+import future2050Img3 from "@/assets/future-2050-3.jpg";
 
 interface Landmark {
   id: string;
@@ -106,6 +111,7 @@ const Memory = () => {
   const [showShareForm, setShowShareForm] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("الكل");
   const [showARView, setShowARView] = useState(false);
+  const [showFutureView, setShowFutureView] = useState(false);
   
   const [newMemory, setNewMemory] = useState({
     caption: "",
@@ -149,6 +155,75 @@ const Memory = () => {
                 onClick={() => setShowARView(false)}
               >
                 العودة للخريطة
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  if (showFutureView) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-heritage-gold/20 to-background flex items-center justify-center">
+        <Card className="border-heritage-gold/20 max-w-3xl w-full mx-4">
+          <CardContent className="p-6 md:p-8 text-center space-y-6">
+            <div className="flex items-center justify-center">
+              <div className="w-24 h-24 bg-heritage-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                <Sparkles className="h-12 w-12 text-heritage-gold" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-heritage-brown mb-2">رحلة المستقبل 2050</h3>
+              <p className="text-muted-foreground">
+                استكشف رؤية مدينة منورة مستقبلية عام 2050 بتفاصيل تجمع بين الأصالة والابتكار.
+              </p>
+            </div>
+
+            <Carousel className="w-full max-w-2xl mx-auto">
+              <CarouselContent>
+                <CarouselItem>
+                  <img
+                    src={future2050Img1}
+                    alt="مدينة المستقبل 2050 - مشهد نهاري ذهبي"
+                    loading="lazy"
+                    className="w-full h-64 md:h-96 object-cover rounded-xl"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img
+                    src={future2050Img2}
+                    alt="مدينة المستقبل 2050 - مشهد ليلي بإضاءات حديثة"
+                    loading="lazy"
+                    className="w-full h-64 md:h-96 object-cover rounded-xl"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img
+                    src={future2050Img3}
+                    alt="مدينة المستقبل 2050 - طبقات معلومات AR على المسار"
+                    loading="lazy"
+                    className="w-full h-64 md:h-96 object-cover rounded-xl"
+                  />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+
+            <div className="space-y-3">
+              <Button
+                className="w-full bg-gradient-primary hover:opacity-90 text-heritage-brown"
+                onClick={() => toast("وضع VR التجريبي قيد التطوير. سنوفر تجربة غامرة قريباً.")}
+              >
+                بدء رحلة VR (تجريبية)
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={() => setShowFutureView(false)}
+              >
+                العودة
               </Button>
             </div>
           </CardContent>
@@ -284,6 +359,13 @@ const Memory = () => {
                 >
                   <Eye className="mr-2 h-4 w-4" />
                   شاهد الماضي
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => setShowFutureView(true)}
+                >
+                  <Sparkles className="mr-2 h-4 w-4" />
+                  رحلة المستقبل 2050
                 </Button>
               </div>
             </CardContent>
